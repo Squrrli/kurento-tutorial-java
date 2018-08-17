@@ -355,12 +355,13 @@ public class Handler extends TextWebSocketHandler
 
     // ---- RTP configuration BEGIN ----
     // Set the appropriate values for your setup
-    String senderIp = "127.0.0.1";
+    //RPi ip: 192.168.50.103
+    String senderIp = "192.168.50.103";
     int senderRtpPortA = 5006;
     int senderRtpPortV = 5004;
     int senderSsrcA = 445566;
     int senderSsrcV = 112233;
-    String senderCname = "user@example.com";
+    String senderCname = "pi@thales.nl";
     String senderCodecV = "H264";
     // String senderCodecV = "VP8";
     // ---- RTP configuration END ----
@@ -383,7 +384,7 @@ public class Handler extends TextWebSocketHandler
       sdpComediaAttr = "a=direction:active\r\n";
     }
 
-    Boolean useAudio = true;
+    Boolean useAudio = false;
     String senderProtocol = "RTP/AVPF";
     String sdpCryptoAttr = "";
     if (useSrtp) {
