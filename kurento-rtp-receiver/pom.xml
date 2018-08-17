@@ -81,7 +81,7 @@
 
 		<resources>
 			<resource>
-				<directory>src/main/resources</directory>
+				<directory>src/main/resources/static/dist/mapStream</directory>
 				<filtering>false</filtering>
 			</resource>
 			<resource>
