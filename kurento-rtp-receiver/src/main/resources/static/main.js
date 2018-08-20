@@ -392,6 +392,8 @@ var WebSocketService = /** @class */ (function () {
     }
     WebSocketService.prototype.connect = function () {
         var _this = this;
+        // test Websocket for Java Rtp Receiver tutorial
+        var ws = new WebSocket('wss://' + location.host + '/player');
         console.log('connect to ws at ' + _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].ws_url);
         this.socket = socket_io_client__WEBPACK_IMPORTED_MODULE_1__(_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].ws_url);
         var observable = new rxjs_Observable__WEBPACK_IMPORTED_MODULE_2__["Observable"](function (obs) {

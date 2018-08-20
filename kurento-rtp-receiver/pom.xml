@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.kurento.tutorial</groupId>
 		<artifactId>kurento-tutorial</artifactId>
-		<version>6.7.2-SNAPSHOT</version>
+		<version>6.7.1</version>
 	</parent>
 	<artifactId>kurento-rtp-receiver</artifactId>
 	<packaging>jar</packaging>
@@ -20,7 +20,7 @@
 
 	<properties>
 		<demo.port>8443</demo.port>
-		<start-class>org.kurento.tutorial.rtpreceiver.Application</start-class>
+		<start-class>org.kurento.tutorial.player.Application</start-class>
 	</properties>
 
 	<dependencies>
@@ -76,12 +76,31 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>${start-class}</mainClass>
+					<layout>ZIP</layout>
+					<classifier>exec</classifier>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>${start-class}</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 
 		<resources>
 			<resource>
-				<directory>src/main/resources/static/dist/mapStream</directory>
+				<directory>src/main/resources</directory>
 				<filtering>false</filtering>
 			</resource>
 			<resource>
